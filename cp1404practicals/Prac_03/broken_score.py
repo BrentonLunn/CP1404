@@ -2,16 +2,24 @@
 CP1404/CP5632 - Practical
 Broken program to determine score status
 """
+import random
 
-# TODO: Fix this!
+def main():
+    score = float(input("Enter score: "))
+    print(get_result(score))
+    print(get_result(random.randint(0, 101)))
 
-score = float(input("Enter score: "))
-if score not in range(0, 101):
-    print("Invalid score")
-elif score >= 90:
-    print("Excellent")
-elif score >= 50:
-    print("passable")
-elif score < 50:
-    print("Bad")
 
+def get_result(score):
+    if score not in range(0, 101):
+        result = "Invalid score"
+    elif score >= 90:
+        result = "Excellent"
+    elif score >= 50:
+        result = "passable"
+    elif score < 50:
+        result = "Bad"
+    return result
+
+
+main()
